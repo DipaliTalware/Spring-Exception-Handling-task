@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDateTime;
 import java.util.NoSuchElementException;
 
 @RestController
@@ -13,11 +14,15 @@ public class AnimalController {
 
     @GetMapping("{species}")
     String getAnimalSpecies(@PathVariable String species) {
-        if (!species.equals("dog")) {
-        throw new IllegalArgumentException("Only 'dog' is allowed");
-
+        try {
+            if (!species.equals("dog")) {
+            throw new IllegalArgumentException("Only 'dog' is allowed");
+            }
+            return species;
+        } catch (IllegalArgumentException e) {
+            return e.getMessage();
         }
-        return species;
+
     }
 
     @GetMapping
