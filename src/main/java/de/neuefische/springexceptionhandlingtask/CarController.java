@@ -10,14 +10,10 @@ public class CarController {
 
     @GetMapping("{brand}")
     String getCarBrand(@PathVariable String brand) {
-        try {
-            if (!brand.equals("porsche")) {
-                throw new IllegalArgumentException("Only 'porsche' allowed");
-            }
-            return brand;
-        } catch (NoSuchElementException e) {
-            return e.getMessage();
+        if (!brand.equals("porsche")) {
+            throw new IllegalArgumentException("Only 'porsche' allowed");
         }
+        return brand;
     }
 
     @GetMapping

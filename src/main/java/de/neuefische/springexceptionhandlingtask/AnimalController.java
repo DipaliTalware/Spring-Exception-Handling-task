@@ -14,15 +14,10 @@ public class AnimalController {
 
     @GetMapping("{species}")
     String getAnimalSpecies(@PathVariable String species) {
-        try {
-            if (!species.equals("dog")) {
-            throw new IllegalArgumentException("Only 'dog' is allowed");
-            }
-            return species;
-        } catch (IllegalArgumentException e) {
-            return e.getMessage();
+        if (!species.equals("dog")) {
+        throw new IllegalArgumentException("Only 'dog' is allowed");
         }
-
+        return species;
     }
 
     @GetMapping
