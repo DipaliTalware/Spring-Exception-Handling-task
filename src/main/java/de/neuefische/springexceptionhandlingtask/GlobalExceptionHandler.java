@@ -47,4 +47,5 @@ public class GlobalExceptionHandler {
         logExceptions(e);
         return new ErrorMessage(e.getMessage(), LocalDateTime.now());
     }
+
 }
