@@ -14,7 +14,8 @@ public class AnimalController {
     @GetMapping("{species}")
     String getAnimalSpecies(@PathVariable String species) {
         if (!species.equals("dog")) {
-            throw new IllegalArgumentException("Only 'dog' is allowed");
+        throw new IllegalArgumentException("Only 'dog' is allowed");
+
         }
         return species;
     }

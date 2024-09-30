@@ -8,6 +8,7 @@ public class SpringExceptionHandlingTaskApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(SpringExceptionHandlingTaskApplication.class, args);
+
     }
 
 }
