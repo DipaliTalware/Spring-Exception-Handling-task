@@ -29,4 +29,9 @@ public class AnimalController {
     String getAllAnimals() {
         throw new NoSuchElementException("No Animals found");
     }
+
+    @GetMapping("/null")
+    String getNullException(){
+        throw new NullPointerException("Null pointer exception");
+    }
 }
